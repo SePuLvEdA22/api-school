@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\teacherControler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 */
 
-Route::get('/students', [studentController::class, 'index']);
+// Student
+Route::get('/students', [studentController::class, 'indexStudent']);
+Route::post('/students', [studentController::class, 'storeStudent']);
 
-Route::post('/students', [studentController::class, 'store']);
+
+
+// Teacher
+Route::get('/teachers', [teacherControler::class, 'indexTeacher']);

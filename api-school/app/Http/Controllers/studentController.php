@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class studentController extends Controller
 {
     // Muestra todos los estudiantes registrados
-    public function index () 
+    public function indexStudent() 
     {
         $student = Student::all();
         if ($student->isEmpty()) {
@@ -24,7 +24,7 @@ class studentController extends Controller
         return response()->json($student, Response::HTTP_OK);
     }
 
-    public function store(Request $request) 
+    public function storeStudent(Request $request) 
     {
         $validator = Validator::make($request->all(),
         [
